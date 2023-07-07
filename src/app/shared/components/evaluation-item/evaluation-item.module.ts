@@ -5,6 +5,9 @@ import { EvaluationModalDetailComponent } from './evaluation-modal-detail/evalua
 import {MatIconModule} from "@angular/material/icon";
 import {MatDialogModule} from "@angular/material/dialog";
 import {SvgModule} from "../../svg/svg.module";
+import {SharedModule} from "../../shared.module";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatTableModule} from "@angular/material/table";
 
 
 
@@ -17,7 +20,9 @@ import {SvgModule} from "../../svg/svg.module";
     CommonModule,
     MatIconModule,
     MatDialogModule,
-    SvgModule
+    SvgModule,
+    MatTabsModule,
+    MatTableModule
   ],
   exports: [
     EvaluationItemComponent,
