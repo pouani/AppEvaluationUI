@@ -1,0 +1,14 @@
+<div (click)="viewDetails()" class="flex flex-row gap-3 items-start w-full py-3 cursor-pointer hover:bg-gray-200 items-center">
+  <div class="flex-none bg-gray-100 h-16 w-16 rounded-full"></div>
+  <div class="w-full flex justify-between">
+    <div class="">
+      <div class="text-gray-500 text-base font-medium">{{evaluation.enseignant}}</div>
+      <div class="text-[#7c69ef]/80">{{ evaluation.performance }}% de performance</div>
+    </div>
+    <div>
+      <small class="text-xs text-gray-400">
+        {{evaluation.date}}
+      </small>
+    </div>
+  </div>
+</div>

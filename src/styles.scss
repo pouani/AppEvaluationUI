@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f1f4f8;
+}
+
+
+.active-item{
+  color: #7c69ef !important;
+  background-color: rgba(0,0,0,.02);
+}
+
+.bg-primary{
+  background-color: #7c69ef;
+}
+
+.active-text{
+  color: #7c69ef !important;
+}
+
+.icon-button {
+  transition: 300ms;
+  @apply w-10 h-10 rounded-full flex-none flex justify-center items-center text-gray-400 hover:text-gray-500 hover:bg-gray-400/30
+  }
+
+
+.mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content {
+  top: -5px;
+  right: -5px;
+}
+
+app-page-header {
+  @apply flex-none flex flex-row items-center justify-between w-full
+  }
+
+app-svg {
+  @apply block
+  }
+
+.button-primary {
+  transition: 300ms;
+  @apply bg-primary text-gray-100 text-base px-4 py-2 rounded-full hover:shadow-md flex flex-row items-center justify-center gap-2
+  }
+
+.button{
+  @apply text-gray-300 text-base px-4 py-2 rounded-full hover:shadow-md flex flex-row items-center justify-center gap-2
+  }
+
+.button-gray {
+  @apply bg-gray-200 text-gray-500
+  }
+
+.button-red {
+  @apply bg-red-500 text-white
+  }
+
+.mat-dialog-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: calc(100vh - 100px) !important;
+  max-height: calc(100vh - 100px) !important;
+}
