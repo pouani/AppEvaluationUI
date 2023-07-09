@@ -20,7 +20,7 @@ export const ADMIN_ROUTES: Array<SideMenu> = [
     sub_content: []
   },
   {
-    icon: 'doc',
+    icon: 'equipement',
     label: 'Evaluations',
     link: '/admin/evaluations',
     sub_content: []

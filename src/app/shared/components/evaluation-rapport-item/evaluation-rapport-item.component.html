@@ -1,0 +1,12 @@
+<div class="flex justify-between flex-col md:flex-row gap-5">
+  <div class="flex flex-row flex-wrap gap-5">
+    <ng-container *ngFor="let item of rapports">
+      <app-rapport-item class="cursor-pointer" [rapport]="item"
+        (click)="selectRapportMethod(item)"
+      ></app-rapport-item>
+    </ng-container>
+  </div>
+  <div *ngIf="selectRapport">
+    <app-show-rapport-item [rapportSelect]="selectRapport"></app-show-rapport-item>
+  </div>
+</div>

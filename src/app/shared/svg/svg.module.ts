@@ -14,6 +14,7 @@ import { DeleteIconComponent } from './delete-icon/delete-icon.component';
 import { DownloadIconComponent } from './download-icon/download-icon.component';
 import { InfoIconComponent } from './info-icon/info-icon.component';
 import { SeeIconComponent } from './see-icon/see-icon.component';
+import { PdfIconComponent } from './pdf-icon/pdf-icon.component';
 
 
 
@@ -32,7 +33,8 @@ import { SeeIconComponent } from './see-icon/see-icon.component';
     DeleteIconComponent,
     DownloadIconComponent,
     InfoIconComponent,
-    SeeIconComponent
+    SeeIconComponent,
+    PdfIconComponent,
   ],
   imports: [
     CommonModule

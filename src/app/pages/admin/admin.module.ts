@@ -12,6 +12,7 @@ import { EmployesComponent } from './employes/employes.component';
 import { EvaluationsComponent } from './evaluations/evaluations.component';
 import { RapportsComponent } from './rapports/rapports.component';
 import {EmployeItemModule} from "../../shared/components/employe-item/employe-item.module";
+import {EvaluationRapportItemModule} from "../../shared/components/evaluation-rapport-item/evaluation-rapport-item.module";
 
 
 
@@ -31,7 +32,8 @@ import {EmployeItemModule} from "../../shared/components/employe-item/employe-it
     PageHeaderModule,
     SvgModule,
     EvaluationItemModule,
-    EmployeItemModule
+    EmployeItemModule,
+    EvaluationRapportItemModule
   ]
 })
 export class AdminModule { }
