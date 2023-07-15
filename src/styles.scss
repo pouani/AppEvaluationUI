@@ -107,6 +107,15 @@ app-show-rapport-item{
 }
 
 .bg-banner{
-  background: url(../src/assets/images/banner.jpg) rgb(46, 46, 46) 50% / cover no-repeat;
+  
+  background:  linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(42, 41, 41, 0.73)),
+  url(../src/assets/images/banner.jpg) 50% / cover no-repeat;
+}
+
+mat-stepper form{
+  mat-form-field{
+    margin: 0 6px;
+  }
+  margin-top: 10px;
 }
 

@@ -1,1 +1,106 @@
-<p>home works!</p>
+<div class="login grid h-full md:h-screen grid-cols-1 md:grid-cols-2 w-full mx-auto  bg-white">
+
+    <div class="login-banner relative h-full hidden md:block bg-banner">
+        <div class="mx-10 pt-16 w-32">
+            <img src="../../../../assets/images/logo-sans-png.png" alt="">
+        </div>
+        <div class="absolute bottom-0 top-1/3 px-12 text-white my-8">
+            <p class="text-3xl">EVALUATION DES ENSEIGNEMENTS</p>
+            <p class="text-xl max-w-md">
+                ANNEE ACADEMIQUE 2022/2023
+            </p>
+            <p class="text-sm">
+                La présente évaluation vise, à travers les avis d’étudiants, l’amélioration des pratiques pédagogiques. Elle consiste en un ensemble d’affirmation relative au contenu et à la gestion du cours par l’enseignant. Vous cocherez, pour chaque affirmation, une seule case, qui correspond à votre niveau de satisfaction, 
+                .
+            </p>
+        </div>
+    </div>
+    <div class="w-full px-5 py-4 md:px-16 h-full overflow-y-auto">
+            <a routerLink="/etudiant/liste">Mes evaluations</a>
+
+            <div>
+                <mat-form-field class="mx-6">
+                    <mat-label>Nom de l'enseignant</mat-label>
+                    <input matInput required name="name" [formControl]="nameControl"/>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Intitulé de la matière</mat-label>
+                    <input matInput required name="matiere" [formControl]="matiereControl"/>
+                </mat-form-field>
+            </div>
+          <mat-stepper [linear]="isLinear" #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup" class="mt-2">
+                <ng-template matStepLabel>Informations personnelle</ng-template>
+                <mat-form-field>
+                  <mat-label>Cycle</mat-label>
+                  <mat-select [formControl]="cycleControl" required>
+                    <mat-option *ngFor="let cycle of cycles" [value]="cycle.name">
+                      {{cycle.cycle}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Classe</mat-label>
+                    <mat-select [formControl]="filiereControl" required>
+                        <mat-option *ngFor="let filiere of filieres" [value]="filiere.name">
+                          {{filiere.filiere}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Niveau</mat-label>
+                    <mat-select [formControl]="niveauControl" required>
+                      <mat-option *ngFor="let niveau of niveaus" [value]="niveau.name">
+                        {{niveau.niveau}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>Sexe</mat-label>
+                    <mat-select [formControl]="sexeControl" required>
+                      <mat-option *ngFor="let sexe of sexes" [value]="sexe.name">
+                        {{sexe.sexe}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-label>Reprend l'UV</mat-label>
+                    <mat-radio-button value="1">Oui</mat-radio-button>
+                    <mat-radio-button value="2">Non</mat-radio-button>
+                  </mat-radio-group>
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Evaluations</ng-template>
+                <div class="flex flex-col gap-3">
+                    <mat-radio-group [formControl]="questionControl" class="flex flex-col border-b" *ngFor="let question of questions, let i = index" aria-label="Select an option">
+                        <mat-label>{{question.question}}</mat-label>
+                        <mat-radio-button *ngFor="let score of question.score" [value]="score" (change)="onScoreSelected(i, score)">{{score}}</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Recommandations</ng-template>
+              <mat-form-field class="example-full-width w-full h-[350px]">
+                <mat-label>Que pensez-vous globalement de l’enseignant et du cours dispensé ? Le recommanderiez-vous aux autres ?</mat-label>
+                <textarea [formControl]="recommandationControl" matInput class="w-full"></textarea>
+              </mat-form-field>
+              
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="submitEvaluation()">Enregistrer</button>
+              </div>
+            </mat-step>
+          </mat-stepper>          
+    </div>
+</div>

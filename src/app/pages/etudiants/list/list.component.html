@@ -1,0 +1,48 @@
+<section class="flex flex-col h-full w-full">
+    <app-navbar class="block flex-none"></app-navbar>
+    <button (click)="logout()" class="button-red w-fit py-2 px-3 rounded-full absolute right-0 top-3 mx-4">Se deconnecter</button>
+    <div class="w-full h-full overflow-y-auto px-16 py-10">
+        <div class=" gap-8 pt-5">
+            <div class=" bg-white rounded-xl shadow p-3 md:p-5">
+              <app-page-header
+                page_title="Mes evaluations"
+                sub_title="Surveiller les mesures, et examiner les performances"
+            >
+                <a routerLink="/etudiant" class="button-primary">
+                <app-svg class="w-5" icon="doc"></app-svg>
+                <span class="hidden sm:block">Nouvelle</span>
+                </a>
+            </app-page-header>
+              <div class="h-5"></div>
+              <div class="w-full divide-y">
+                <div class="grid grid-cols-5">
+                    <p class="font-semibold text-gray-600">Professeurs</p>
+                    <p class="font-semibold text-gray-600">Matières</p>
+                    <p class="font-semibold text-gray-600">Niveau</p>
+                    <p class="font-semibold text-gray-600">Score</p>
+                    <p class="font-semibold text-gray-600">Actions</p>
+                </div>
+                <ng-container *ngIf="evaluations.length > 0;">
+                  <div *ngFor="let evaluation of evaluations; let i = index" class="grid grid-cols-5 pt-2">
+                    <p>{{ evaluation.question }}</p>
+                    <p>{{ evaluation.name }}</p>
+                    <p>{{ evaluation.niveau }}</p>
+                    <p>{{ evaluation.totalScore }}/100</p>
+                    <button (click)="removeEvaluation(i)" class="button-red flex w-fit justify-center items-center rounded-full px-2">
+                        <app-svg icon="delete" class="w-5"></app-svg>
+                        <span class="hidden sm:block">supprimer</span>
+                    </button>
+                  </div>
+                </ng-container>
+
+                <ng-container *ngIf="evaluations.length == 0;">
+                    <div class="grid grid-cols-5 pt-2">
+                        <p class="text-center text-gray-600" colspan="5">Aucune évaluation disponible</p>
+                    </div>
+                </ng-container>
+                
+              </div>
+            </div>
+          </div>
+    </div>
+  </section>
