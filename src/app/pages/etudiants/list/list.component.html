@@ -1,14 +1,14 @@
 <section class="flex flex-col h-full w-full">
     <app-navbar class="block flex-none"></app-navbar>
-    <button (click)="logout()" class="button-red w-fit py-2 px-3 rounded-full absolute right-0 top-3 mx-4">Se deconnecter</button>
+    <a routerLink="/etudiant" (click)="logout()" class="button-red w-fit py-2 px-3 rounded-full absolute right-0 top-3 mx-4">Se deconnecter</a>
     <div class="w-full h-full overflow-y-auto px-16 py-10">
         <div class=" gap-8 pt-5">
             <div class=" bg-white rounded-xl shadow p-3 md:p-5">
               <app-page-header
-                page_title="Mes evaluations"
-                sub_title="Surveiller les mesures, et examiner les performances"
-            >
-                <a routerLink="/etudiant" class="button-primary">
+                    page_title="Mes evaluations"
+                    sub_title="Surveiller les mesures, et examiner les performances"
+                >
+                <a routerLink="/login" class="button-primary">
                 <app-svg class="w-5" icon="doc"></app-svg>
                 <span class="hidden sm:block">Nouvelle</span>
                 </a>

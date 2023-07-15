@@ -21,7 +21,11 @@
                 </mat-label>
 
                 <input matInput #input maxlength="13" required name="password" type="password" formControlName="password"
+                    [type]="hide ? 'password' : 'text'"
                 />
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
                 <mat-hint align="end">{{input.value.length}}/13</mat-hint>
             </mat-form-field>
 

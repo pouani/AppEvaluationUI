@@ -16,7 +16,10 @@
         </div>
     </div>
     <div class="w-full px-5 py-4 md:px-16 h-full overflow-y-auto">
-            <a routerLink="/etudiant/liste">Mes evaluations</a>
+            <a routerLink="/etudiant/liste" class="button-primary w-fit mx-4 my-2">
+                <app-svg class="w-4" icon="doc"></app-svg>
+                <span>Mes evaluations</span>
+            </a>
 
             <div>
                 <mat-form-field class="mx-6">
@@ -84,21 +87,21 @@
                     </mat-radio-group>
                 </div>
                 <div>
-                  <button mat-button matStepperPrevious>Back</button>
-                  <button mat-button matStepperNext>Next</button>
+                  <button mat-button matStepperPrevious>Revenir</button>
+                  <button mat-button matStepperNext>Suivant</button>
                 </div>
               </form>
             </mat-step>
             <mat-step>
               <ng-template matStepLabel>Recommandations</ng-template>
-              <mat-form-field class="example-full-width w-full h-[350px]">
+              <mat-form-field class="example-full-width w-full h-[250px] mt-4">
                 <mat-label>Que pensez-vous globalement de l’enseignant et du cours dispensé ? Le recommanderiez-vous aux autres ?</mat-label>
                 <textarea [formControl]="recommandationControl" matInput class="w-full"></textarea>
               </mat-form-field>
               
               <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button (click)="submitEvaluation()">Enregistrer</button>
+                <button mat-button matStepperPrevious>Revenir</button>
+                <button mat-button (click)="submitEvaluation()" class="primary">Enregistrer</button>
               </div>
             </mat-step>
           </mat-stepper>          

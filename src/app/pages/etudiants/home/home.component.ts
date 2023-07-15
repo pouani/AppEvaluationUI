@@ -138,9 +138,11 @@ export class HomeComponent implements OnInit {
   
   this.firstFormGroup.reset();
   this.secondFormGroup.reset();
+  this.recommandationControl.reset();
 
-  
-  console.log(evaluations);
+    if(evaluations){
+      alert("evaluation enregistré avec succès")
+    }
   }
 
 }

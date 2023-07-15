@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
 
   isSubmitting!: boolean;
 
+  hide = true;
+
   constructor(private formBuilder: FormBuilder, private router: Router){}
 
   ngOnInit(): void{
@@ -62,9 +64,9 @@ export class LoginComponent implements OnInit {
       let role!: string;
   
       // Vérification de la 6e lettre du mot de passe
-      if (password.charAt(5) === 's') {
+      if (password.charAt(5) === 's' || password.charAt(5) === 'S') {
         role = 'admin';
-      } else if (password.charAt(5) === 'e') {
+      } else if (password.charAt(5) === 'e' || password.charAt(5) === 'E') {
         role = 'etudiant';
       }
 
