@@ -17,6 +17,10 @@ body {
   background-color: rgba(0,0,0,.02);
 }
 
+.active-border{
+  border: 1px solid #7c69ef;
+}
+
 .bg-primary{
   background-color: #7c69ef;
 }
@@ -74,6 +78,10 @@ app-show-rapport-item{
   }
 }
 
+.btn-submit button{
+  border-radius: 32px !important;
+  padding: 0 30px !important;
+}
 .button-primary {
   transition: 300ms;
   @apply bg-primary text-gray-100 text-base px-4 py-2 rounded-full hover:shadow-md flex flex-row items-center justify-center gap-2
@@ -98,4 +106,7 @@ app-show-rapport-item{
   max-height: calc(100vh - 100px) !important;
 }
 
+.bg-banner{
+  background: url(../src/assets/images/banner.jpg) rgb(46, 46, 46) 50% / cover no-repeat;
+}
 

@@ -2,6 +2,7 @@
   <div class="flex flex-row flex-wrap gap-5">
     <ng-container *ngFor="let item of rapports">
       <app-rapport-item class="cursor-pointer" [rapport]="item"
+                        [ngClass]="selectRapport?.code == item.code ? 'active-border' : ''"
         (click)="selectRapportMethod(item)"
       ></app-rapport-item>
     </ng-container>

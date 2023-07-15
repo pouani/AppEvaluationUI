@@ -27,7 +27,6 @@ export class SidebarMenuItemComponent implements OnInit, OnChanges{
   }
 
   ngOnInit(): void {
-    console.log(this.item)
     this.withSubContent = (this.item?.sub_content || []).length > 0
   }
 
